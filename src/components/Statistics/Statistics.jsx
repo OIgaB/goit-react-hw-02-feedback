@@ -35,9 +35,7 @@ export const Statistics = ({ options, total, positivePercentage }) => {
 }
 
 Statistics.propTypes = {
-    key: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    value: PropTypes.number.isRequired,
+    options: PropTypes.object.isRequired,
     total: PropTypes.func.isRequired,
     positivePercentage: PropTypes.func.isRequired,
 };
