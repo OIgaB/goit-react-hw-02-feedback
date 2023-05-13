@@ -38,20 +38,20 @@ export class App extends Component {
 
   render() {
     const optionsKeys = Object.keys(this.state); // масив рядків ['good', 'neutral', 'bad']
-    // const {} = this.state;
+    const { onLeaveFeedback, countTotalFeedback, countPositiveFeedbackPercentage } = this;
     return (
         <Container> 
           <Title>Expresso Caffee</Title>
           <Section title="Please leave a feedback"> 
-            <FeedbackOptions options={optionsKeys} onLeaveFeedback={this.onLeaveFeedback} /> 
+            <FeedbackOptions options={optionsKeys} onLeaveFeedback={onLeaveFeedback} /> 
           </Section> 
 
           <Container>
             <Section title="Statistics">
-              {this.countTotalFeedback() === 0 ? (
+              {countTotalFeedback() === 0 ? (
                 <Notification message='There is no feedback'/>
               ) : (
-                <Statistics options={this.state} total={this.countTotalFeedback} positivePercentage={this.countPositiveFeedbackPercentage}></Statistics>
+                <Statistics options={this.state} total={countTotalFeedback} positivePercentage={countPositiveFeedbackPercentage}></Statistics>
               )}
             </Section>
           </Container>
